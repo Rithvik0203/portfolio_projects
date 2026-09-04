@@ -1,0 +1,7 @@
+
+module forwardUnit();
+	input logic [63:0] in1, in2. in3 in4;
+	input logic signa1, signal2;
+	output logic sel1, sel2;
+
+endmodule

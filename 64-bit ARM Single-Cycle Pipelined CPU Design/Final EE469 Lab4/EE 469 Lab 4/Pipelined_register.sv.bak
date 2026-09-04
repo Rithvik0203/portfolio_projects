@@ -1,0 +1,15 @@
+
+module Pipelined_register(in, out, en, clk);
+	input logic en, clk;
+	input logic [63:0] in;
+	output logic [63:0] out;
+	
+	genvar i;
+	generate 
+		// Generate 64 instances of the DFFEnable module for each bit of the 64-bit register
+		for (i = 0; i < 64; i++) begin: pipe
+			DFFEnable pipe(.q(out[i]), .d(in[i]), .reset(1'b0), .clk(clk), .enable(en));
+		end
+	endgenerate
+
+endmodule

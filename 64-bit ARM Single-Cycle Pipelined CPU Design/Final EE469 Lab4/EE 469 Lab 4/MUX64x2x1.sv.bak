@@ -1,0 +1,14 @@
+module MUX64x2x1 (out, sel, in);
+	input logic [2:0] sel;
+	input logic [63:0] in;
+	output logic [63:0] out;
+	
+	
+	genvar i;
+	generate
+		for (i = 0; i < 64; i++) begin: times64
+			MUX2x1(.sel, .a(in[i]), .b(in[i]), .out(out[i]);
+		end
+	endgenerate
+	
+endmodule 

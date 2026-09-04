@@ -1,0 +1,7 @@
+
+module Hazard_detection();
+	input logic [63:0] in1;
+	input logic signal1;
+	output logic 
+
+endmodule

@@ -1,0 +1,8 @@
+module control (instr, Reg2Loc, RegWrite, ALUSrc, ALUOp, MemWrite, MemRead, MemtoReg, PCSrc);
+	input logic [10:0] instr; 
+	output logic [1:0] Reg2Loc, RegWrite, ALUSrc, ALUOp, MemWrite, MemRead, MemtoReg, PCSrc;
+
+	
+	
+	
+endmodule 

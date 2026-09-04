@@ -1,0 +1,14 @@
+module program_counter (clk, reset, out);
+
+	input logic clk, reset;
+	output logic [63:0] out;
+	
+//	always_ff @(posedge clk) begin
+//	if (reset) begin
+//		out <= 32'b0;
+//	end
+//	else
+//		out <= 32'b
+
+
+endmodule

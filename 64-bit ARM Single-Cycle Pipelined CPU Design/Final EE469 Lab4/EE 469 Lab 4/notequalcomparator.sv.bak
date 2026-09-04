@@ -1,0 +1,16 @@
+
+module notequalcomparator(a, nq);
+	input logic [4:0] a;
+	output logic nq;
+	
+	logic [4:0] nq_check;
+	
+	xor (nq_check[0], a[0], 1'b1);
+	xor (nq_check[1], a[1], 1'b1);
+	xor (nq_check[2], a[2], 1'b1);
+	xor (nq_check[3], a[3], 1'b1);
+	xor (nq_check[4], a[4], 1'b1);
+
+	or (nq, nq_check[0], nq_check[1], nq_check[2], nq_check[3], nq_check[4])
+
+endmodule

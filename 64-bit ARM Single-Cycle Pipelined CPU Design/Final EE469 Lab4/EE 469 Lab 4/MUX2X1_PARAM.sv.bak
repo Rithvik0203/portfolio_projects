@@ -1,0 +1,21 @@
+// This is a 2 to 1 multiplexer that selects one of the two input signals (a or b) 
+// based on the value of the selection signal (sel) and forwards the selected input to the output (out). 
+
+`timescale 1ns/10ps
+
+module MUX2x1_param #(width = 64) (sel, a, b, out);
+	input logic sel;
+	input logic [width-1:0] a, b;
+	output logic [width-1:0] out;
+	
+	//a is 0, b is 1
+	genvar i;
+	generate
+		for (i = 0; i < width; i++) begin : gen_mux2x1
+			wire g, h, k;
+			not #(50) ( k, sel );
+			and #(50) ( g, k, a ), ( h, sel, b );
+			or #(50) ( out, g, h );
+		end
+	endgenerate
+endmodule 
